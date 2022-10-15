@@ -11,38 +11,45 @@ import static java.util.Arrays.*;
 
 
 public class Cabcodechef {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         int T;
 
 
         Scanner cin = new Scanner(System.in);
         T = cin.nextInt();
         while (T-- > 0) {
-            int n=cin.nextInt();
-            int arr[]=new int[n];
-            int ary[]=new int[n];
-           for(int i=0;i<arr.length;i++){
-              arr[i]=cin.nextInt();
-               }
-           int count=0;
-           int k=0;
-           Arrays.sort(arr);
-          for(int i=0;i<arr.length-1;i++) {
-              if(arr[i]==arr[i+1]){
-                  count++;
-                  k=count+k;
-                  continue;
-              }
-              if(arr[i]!=arr[i+1]){
-                  count=0;
-                  continue;
-              }
-          }
-            System.out.println(k);
-              }
 
+            //ababbbab                     ab, ba
         }
+    }
+
+
+}
+
+
+
+/*String S=cin.next();
+        String X=cin.next();
+        int a=Integer.parseInt(S);
+        int num=Integer.parseInt(X,2);
+        String b="";
+        for(int i=0;i<X.length();i++){
+            if(X.charAt(i)=='0')
+            {
+               b=b+'1';
+            }
+            else  {
+                b=b+'0';
+            }
         }
+            int nums=Integer.parseInt(b,2);
+
+            int i=0;
+            for(i=0;i<a;i++){
+                if(num/((int)Math.pow(2,i))<=nums)
+                    break;
+            }
+            System.out.println(i);*/
 
 
 

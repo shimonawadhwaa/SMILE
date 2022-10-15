@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class sortings {
     public static void main(String[] args) {
-       /* int N;
+        int N;
         Scanner cin = new Scanner(System.in);
         System.out.println("enter n: ");
         N = cin.nextInt();
@@ -12,25 +12,25 @@ public class sortings {
         for (int i = 0; i < ary.length; i++) {
             System.out.println("enter value:");
             ary[i] = cin.nextInt();
-        }*/
+        }
         sorts ref = new sorts();
        // int[] ery=new int[10];
        // ref.countingSorts(ary,ery);
         //ref.bubbleSort(ary);
         //ref.selectionSort(ary);
-        //ref.insertionSort(ary);
+        ref.insertionSort(ary);
         // ref.ultaBubbleSort(ary);
         //ref.shellSort(ary);
-         int arr[]={20,35,-15,7,55,1,-22};
+        // int arr[]={20,35,-15,7,55,1,-22};
 
         //ref.mergeSort(arr,0,arr.length);
         //ref.quickSorts(arr,0,arr.length);
        // ref.inverseMergeSort(arr,0,arr.length);
        // ref.insertionRecur(arr,1,arr.length);
-       for(int i=0;i<arr.length;i++)
-        {
-            System.out.println(arr[i]);
-        }
+//       for(int i=0;i<arr.length;i++)
+//        {
+//            System.out.println(arr[i]);
+//        }
     }
     }
 
@@ -83,6 +83,9 @@ public class sortings {
                     pw--;
                 }
                 ary[pw + 1] = temp;                       //[3,4,2,1,0]
+            }
+            for(int i=0;i<ary.length;i++){
+                System.out.println(ary[i]);
             }
         }
 
