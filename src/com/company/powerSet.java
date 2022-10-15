@@ -1,6 +1,8 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class powerSet {
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ class Solve{
             }
             ans.add(put);
         }
+        Collections.sort(ans);
         return ans;
     }
 }
