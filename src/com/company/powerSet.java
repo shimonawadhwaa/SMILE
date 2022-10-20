@@ -7,7 +7,9 @@ import java.util.Collections;
 public class powerSet {
     public static void main(String[] args) {
         String s="abc";
-        System.out.println(Solve.possibleAnswer(s));
+        ArrayList<Character> index=new ArrayList<>();
+       // System.out.println(Solve.possibleAnswer(s));
+       Solve.possibleAnswerRecurssion(0,s,index);
     }
 }
 class Solve{
@@ -25,5 +27,20 @@ class Solve{
         }
         Collections.sort(ans);
         return ans;
+    }
+    static void possibleAnswerRecurssion(int ind, String s, ArrayList<Character> arr){
+        if(ind>=s.length()){
+            for(char a:arr){
+                System.out.print(a);
+            }
+            System.out.println();
+            return;
+        }
+        arr.add(s.charAt(ind));
+       possibleAnswerRecurssion(ind+1,s,arr);
+       Character b= s.charAt(ind);
+        arr.remove(b);
+        possibleAnswerRecurssion(ind+1,s,arr);
+        return;
     }
 }
