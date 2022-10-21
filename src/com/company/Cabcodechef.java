@@ -18,54 +18,42 @@ public class Cabcodechef {
         Scanner cin = new Scanner(System.in);
         T = cin.nextInt();
         while (T-- > 0) {
-            int length=cin.nextInt();
-            String s1=cin.next();
-            String s2=cin.next();
-            String c="";
-            String result = "";
-            for (int i = 0; i < s1.length(); i++){
-
-                char ch = s1.charAt(i);
-                if (s2.indexOf(ch) != -1){
-                    c = c + ch;
-                    if (!result.contains("" + c.charAt(i)))
-                        result += "" + c.charAt(i);
-
+            String p1=cin.next();
+            String p2=cin.next();
+            int n=cin.nextInt();
+            String name[]=new String[n];
+            for(int i=0;i<n;i++){
+                name[i]=cin.next();
+            }
+            String s1="";
+            s1=s1.concat(p1);
+            s1=s1.concat(p2);
+            char a[]=s1.toCharArray();
+            ArrayList<Character> chars = new ArrayList<Character>();
+            for (char c : s1.toCharArray()) {
+                Character t=c;
+                chars.add(t);
+           }
+            String s2="";
+            for(int i=0;i<n;i++){
+                s2=s2.concat(name[i]);
+            }
+            ArrayList<Character> child = new ArrayList<Character>();
+            for (char c : s2.toCharArray()) {
+                Character v=c;
+                child.add(v);
+            }
+            for(int i=0;i<chars.size();i++){
+                if(child.contains(chars.get(i))){
+                    Character d=chars.get(i);
+                    child.remove(d);
+//                    chars.remove(i);
                 }
             }
-//            String result = "";
-//            for (int i = 0; i < c.length(); i++)
-//                if (!result.contains("" + c.charAt(i)))
-//                    result += "" + c.charAt(i);
-            int j=0;
-            int count1=0;
-            int count2=0;
-            int max=0;
-            for(j=0;j<result.length();j++) {
-                for (int i = 0; i < s1.length(); i++) {
-                    if (result.charAt(j) == s1.charAt(i)) {
-                        count1++;
-                    }
-                    if (result.charAt(j) == s2.charAt(i)) {
-                        count2++;
-                    }
-
-                }
-                if (count1 < count2) {
-                    if (count1 > max)
-                        max = count1;
-                } else {
-                    if (count2 <= count1) {
-                        if (count2 > max)
-                            max = count2;
-                    }
-                }
-                count1=0;
-                count2=0;
+            if(child.size()==0){
+                System.out.println("yes");
             }
-            System.out.println(max);
-
-
+            else System.out.println("no");
 
         }
    }
